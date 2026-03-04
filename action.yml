@@ -1,0 +1,73 @@
+name: Code Your CV
+description: "GitHub Action to render and compile a LaTeX resume template"
+author: "crackedngineer"
+
+inputs:
+  out-dir:
+    description: "output path for the generated CV"
+    required: false
+    default: "output"
+
+  file-name:
+    description: "File Path for the CV Config YAML file"
+    required: false
+    default: "config.yml"
+
+  commit-message:
+    description: "Commit message for generated files"
+    required: false
+    default: "chore(pdf): update generated files"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Mark workspace safe
+      shell: bash
+      run: git config --global --add safe.directory $GITHUB_WORKSPACE
+
+    - name: Install pdfLaTeX and pandoc
+      shell: bash
+      run: |
+        sudo apt-get update && sudo apt-get install -y --no-install-recommends \
+          texlive-latex-base \
+          texlive-latex-recommended \
+          texlive-latex-extra \
+          texlive-fonts-recommended \
+          texlive-xetex \
+          latexmk \
+          pandoc
+        sudo apt-get clean4
+    
+    - name: Install codeurcv
+      shell: bash
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install codeurcv
+
+    - name: Generate CV
+      shell: bash
+      run: |
+        codeurcv run -f "${{ inputs.file-name }}" -o "${{ inputs.out-dir }}"
+
+    - name: Configure Git
+      shell: bash
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Commit changes
+      shell: bash
+      run: |
+        cd "$GITHUB_WORKSPACE"
+
+        git add "${{ inputs.out-dir }}"/*.pdf
+
+        if git diff --cached --quiet; then
+          echo "✅ No changes to commit"
+        else
+          git commit -m "${{ inputs.commit-message }}"
+          git push
+        fi
