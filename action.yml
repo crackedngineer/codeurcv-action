@@ -35,7 +35,7 @@ runs:
           texlive-xetex \
           latexmk \
           pandoc
-        sudo apt-get clean4
+        sudo apt-get clean
     
     - name: Install codeurcv
       shell: bash
