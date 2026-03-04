@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/crackedngineer/codeurcv-action/compare/v0.1.0...v0.2.0) (2026-03-04)
+
+
+### Features
+
+* publishing release for github action marketplace ([e054a6f](https://github.com/crackedngineer/codeurcv-action/commit/e054a6f266dbd40ae5009266b42ccadfeba5f248))
+
 ## [0.1.0](https://github.com/crackedngineer/codeurcv-action/compare/v0.0.1...v0.1.0) (2026-03-04)
 
 
