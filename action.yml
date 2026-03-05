@@ -52,7 +52,7 @@ runs:
     - name: Generate CV
       shell: bash
       run: |
-        codeurcv run -f "${{ inputs.file-name }}" -o "${{ inputs.out-dir }}"
+        codeurcv run "${{ inputs.config-path }}" -o "${{ inputs.out-dir }}" -t "${{ inputs.template }}" -n "${{ inputs.filename }}"
 
     - name: Configure Git
       shell: bash
