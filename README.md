@@ -44,6 +44,10 @@ on:
     paths:
       - "config.yml"
 
+permissions:
+  contents: write
+  packages: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -54,6 +58,8 @@ jobs:
         with:
           config-path: config.yml
           out-dir: output
+          template: minimalist
+          filename: john-doe-resume
 
       - name: Commit generated PDF
         run: |
