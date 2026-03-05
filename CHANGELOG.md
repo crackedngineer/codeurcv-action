@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/crackedngineer/codeurcv-action/compare/v0.2.1...v0.3.0) (2026-03-05)
+
+
+### Features
+
+* add template and filename inputs to action configuration ([b9fb534](https://github.com/crackedngineer/codeurcv-action/commit/b9fb534297ab0657a163f25f6060660c38f6e12f))
+
 ## [0.2.1](https://github.com/crackedngineer/codeurcv-action/compare/v0.2.0...v0.2.1) (2026-03-04)
 
 
