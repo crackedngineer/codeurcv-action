@@ -16,7 +16,7 @@
 ```yaml
 - uses: crackedngineer/codeurcv-action@v1
   with:
-    file-name: resume.yml
+    config-path: config.yml
     out-dir: output
     template: minimalist
     filename: john-doe-resume
@@ -52,7 +52,7 @@ jobs:
 
       - uses: crackedngineer/codeurcv-action@v1
         with:
-          file-name: config.yml
+          config-path: config.yml
           out-dir: output
 
       - name: Commit generated PDF
