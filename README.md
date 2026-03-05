@@ -18,6 +18,8 @@
   with:
     file-name: resume.yml
     out-dir: output
+    template: minimalist
+    filename: john-doe-resume
 ```
 
 ---
@@ -26,9 +28,10 @@
 
 | Input | Required | Default | Description |
 |-------|----------|---------|-------------|
-| `file-name` | ✅ | — | Path to your resume YAML or JSON config |
-| `out-dir` | ❌ | `output` | Directory to save the generated PDF |
-
+| `file-name` | ❌ | — | Path to your resume YAML or JSON config |
+| `out-dir` | ✅ | `output` | Directory to save the generated PDF |
+| `template` | ✅ | - | Override the resume template |
+| `filename` | ✅ | - | Override the output PDF filename (without `.pdf`) |
 ---
 
 ## Example Workflow
@@ -39,7 +42,7 @@ name: Build Resume
 on:
   push:
     paths:
-      - "resume.yml"
+      - "config.yml"
 
 jobs:
   build:
@@ -49,7 +52,7 @@ jobs:
 
       - uses: crackedngineer/codeurcv-action@v1
         with:
-          file-name: resume.yml
+          file-name: config.yml
           out-dir: output
 
       - name: Commit generated PDF

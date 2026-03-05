@@ -4,14 +4,20 @@ author: "crackedngineer"
 
 inputs:
   out-dir:
-    description: "output path for the generated CV"
+    description: "Directory to save the generated PDF"
     required: false
     default: "output"
 
-  file-name:
-    description: "File Path for the CV Config YAML file"
+  config-path:
+    description: "Path to your resume YAML or JSON config"
+  
+  template:
+    description: "Override the resume template"
     required: false
-    default: "config.yml"
+
+  filename:
+    description: "Override the output PDF filename (without .pdf)"
+
 
   commit-message:
     description: "Commit message for generated files"
