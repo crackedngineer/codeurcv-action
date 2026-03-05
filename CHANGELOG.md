@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/crackedngineer/codeurcv-action/compare/v0.3.0...v0.3.1) (2026-03-05)
+
+
+### Bug Fixes
+
+* update CV generation command to use correct input parameters ([4cd3a23](https://github.com/crackedngineer/codeurcv-action/commit/4cd3a23777c3f381048931d55f86674e59394538))
+* update usage examples to use correct config-path input ([e742941](https://github.com/crackedngineer/codeurcv-action/commit/e742941f67bb33fa4d6e3d270a21c338ca52a35c))
+
 ## [0.3.0](https://github.com/crackedngineer/codeurcv-action/compare/v0.2.1...v0.3.0) (2026-03-05)
 
 
