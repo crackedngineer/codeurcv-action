@@ -10,7 +10,8 @@ permissions:
     pull-requests: write
 
 env:
-    FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true
+    FORCE_JAVASCRIPT_ACTIONS_TO_NODE24L: true
+    
 jobs:
     release-please:
         runs-on: ubuntu-latest
