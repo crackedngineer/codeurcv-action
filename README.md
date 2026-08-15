@@ -28,9 +28,9 @@
 
 | Input | Required | Default | Description |
 |-------|----------|---------|-------------|
-| `file-name` | ❌ | — | Path to your resume YAML or JSON config |
-| `out-dir` | ✅ | `output` | Directory to save the generated PDF |
-| `template` | ✅ | - | Override the resume template |
+| `config-path` | ✅ | — | Path to your resume YAML or JSON config |
+| `out-dir` | ❌ | `output` | Directory to save the generated PDF |
+| `template` | ❌ | - | Override the resume template |
 | `filename` | ✅ | - | Override the output PDF filename (without `.pdf`) |
 ---
 
