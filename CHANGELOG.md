@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.2](https://github.com/crackedngineer/codeurcv-action/compare/v0.3.1...v0.3.2) (2026-08-15)
+
+
+### Bug Fixes
+
+* add FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 environment variable ([5fb175a](https://github.com/crackedngineer/codeurcv-action/commit/5fb175abeff55325f6b9bc30c0408e70e51eebfe))
+* correct environment variable name from FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 to ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION ([50974d6](https://github.com/crackedngineer/codeurcv-action/commit/50974d6b69cb41116bf54b645042d71fc196e9f9))
+* correct environment variable name from FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 to FORCE_JAVASCRIPT_ACTIONS_TO_NODE24L ([1f180ff](https://github.com/crackedngineer/codeurcv-action/commit/1f180ff7fb7bcaa442c201f98af9f09e68ba3cb9))
+* correct environment variable name from FORCE_JAVASCRIPT_ACTIONS_TO_NODE24L to FORCE_JAVASCRIPT_ACTIONS_TO_NODE24 ([06d5b1a](https://github.com/crackedngineer/codeurcv-action/commit/06d5b1a66101b3174d711b985c2024bf03634158))
+* update actions/checkout version to v7 ([a4b4c21](https://github.com/crackedngineer/codeurcv-action/commit/a4b4c216dfeb7ba9bb7b0d16898945fcdaa0442f))
+* update actions/checkout version to v7 ([f99c82d](https://github.com/crackedngineer/codeurcv-action/commit/f99c82d4cd130da31342f397465d8c80d4573453))
+* update actions/github-script version to v9 ([b5f1149](https://github.com/crackedngineer/codeurcv-action/commit/b5f1149566c5092d6b6d85d14c1082fd6b43fe34))
+
 ## [0.3.1](https://github.com/crackedngineer/codeurcv-action/compare/v0.3.0...v0.3.1) (2026-03-05)
 
 
