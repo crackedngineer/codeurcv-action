@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/crackedngineer/codeurcv-action/compare/v0.3.2...v0.3.3) (2026-08-15)
+
+
+### Bug Fixes
+
+* correct input table header for resume configuration ([658e9e8](https://github.com/crackedngineer/codeurcv-action/commit/658e9e849d83f3ff309762bc71626b78cce96dee))
+
 ## [0.3.2](https://github.com/crackedngineer/codeurcv-action/compare/v0.3.1...v0.3.2) (2026-08-15)
 
 
