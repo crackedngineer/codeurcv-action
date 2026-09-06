@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.4](https://github.com/crackedngineer/codeurcv-action/compare/v0.3.3...v0.3.4) (2026-09-06)
+
+
+### Bug Fixes
+
+* update action name and description to reflect RenderCV usage ([810124b](https://github.com/crackedngineer/codeurcv-action/commit/810124bdc24c27d8536635f8d3c13917c6e9a6e6))
+
 ## [0.3.3](https://github.com/crackedngineer/codeurcv-action/compare/v0.3.2...v0.3.3) (2026-08-15)
 
 
