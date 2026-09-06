@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.5](https://github.com/crackedngineer/codeurcv-action/compare/v0.3.4...v0.3.5) (2026-09-06)
+
+
+### Bug Fixes
+
+* update argument flag for output folder in CV generation ([8e5e424](https://github.com/crackedngineer/codeurcv-action/commit/8e5e4247d89469163faaf0ae3a188db623c6582d))
+
 ## [0.3.4](https://github.com/crackedngineer/codeurcv-action/compare/v0.3.3...v0.3.4) (2026-09-06)
 
 
