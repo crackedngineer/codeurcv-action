@@ -1,10 +1,10 @@
 <div align="center">
 
-# codeurcv-action
+# rendercv-action
 
-**GitHub Action to generate a professional PDF resume from a YAML or JSON config.**
+**GitHub Action to generate a professional PDF resume from a YAML config using [RenderCV](https://github.com/rendercv/rendercv).**
 
-[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-codeurcv--action-blue?logo=github)](https://github.com/marketplace/actions/codeurcv-action)
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-rendercv--action-blue?logo=github)](https://github.com/marketplace/actions/rendercv-action)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 </div>
@@ -14,11 +14,10 @@
 ## Usage
 
 ```yaml
-- uses: crackedngineer/codeurcv-action@v1
+- uses: crackedngineer/rendercv-action@v1
   with:
     config-path: config.yml
     out-dir: output
-    template: minimalist
     filename: john-doe-resume
 ```
 
@@ -28,9 +27,8 @@
 
 | Input | Required | Default | Description |
 |-------|----------|---------|-------------|
-| `config-path` | ✅ | — | Path to your resume YAML or JSON config |
+| `config-path` | ✅ | — | Path to your resume YAML config |
 | `out-dir` | ❌ | `output` | Directory to save the generated PDF |
-| `template` | ❌ | - | Override the resume template |
 | `filename` | ✅ | - | Override the output PDF filename (without `.pdf`) |
 ---
 
@@ -54,11 +52,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: crackedngineer/codeurcv-action@v1
+      - uses: crackedngineer/rendercv-action@v1
         with:
           config-path: config.yml
           out-dir: output
-          template: minimalist
           filename: john-doe-resume
 
       - name: Commit generated PDF
@@ -74,5 +71,5 @@ jobs:
 
 ## Related
 
-- [codeurcv](https://github.com/crackedngineer/code-ur-cv) — the CLI tool powering this action
-- [PyPI](https://pypi.org/project/codeurcv/) — install locally to preview before pushing
+- [RenderCV](https://github.com/rendercv/rendercv) — the CLI tool powering this action
+- [PyPI](https://pypi.org/project/rendercv/) — install locally to preview before pushing

@@ -1,5 +1,5 @@
-name: codeurcv-action
-description: "GitHub Action to render and compile a LaTeX resume template"
+name: rendercv-action
+description: "GitHub Action to render and compile a resume from a YAML config using RenderCV"
 author: "crackedngineer"
 
 inputs:
@@ -9,15 +9,10 @@ inputs:
     default: "output"
 
   config-path:
-    description: "Path to your resume YAML or JSON config"
-  
-  template:
-    description: "Override the resume template"
-    required: false
+    description: "Path to your resume YAML config"
 
   filename:
     description: "Override the output PDF filename (without .pdf)"
-
 
   commit-message:
     description: "Commit message for generated files"
@@ -30,29 +25,22 @@ runs:
     - name: Checkout repository
       uses: actions/checkout@v7
 
-    - name: Install pdfLaTeX and pandoc
-      shell: bash
-      run: |
-        sudo apt-get update && sudo apt-get install -y --no-install-recommends \
-          texlive-latex-base \
-          texlive-latex-recommended \
-          texlive-latex-extra \
-          texlive-fonts-recommended \
-          texlive-xetex \
-          latexmk \
-          pandoc
-        sudo apt-get clean
-    
-    - name: Install codeurcv
+    - name: Install rendercv
       shell: bash
       run: |
         python -m pip install --upgrade pip
-        python -m pip install codeurcv
+        python -m pip install "rendercv[full]"
 
     - name: Generate CV
       shell: bash
       run: |
-        codeurcv run "${{ inputs.config-path }}" -o "${{ inputs.out-dir }}" -t "${{ inputs.template }}" -n "${{ inputs.filename }}"
+        args=(rendercv render "${{ inputs.config-path }}" --output-folder "${{ inputs.out-dir }}")
+
+        if [ -n "${{ inputs.filename }}" ]; then
+          args+=(--pdf-path "${{ inputs.out-dir }}/${{ inputs.filename }}.pdf")
+        fi
+
+        "${args[@]}"
 
     - name: Configure Git
       shell: bash
@@ -63,7 +51,7 @@ runs:
     - name: Commit changes
       shell: bash
       run: |
-        git add "${{ inputs.out-dir }}"/*.pdf
+        git add "${{ inputs.out-dir }}"/*
 
         if git diff --cached --quiet; then
           echo "✅ No changes to commit"
